@@ -49,10 +49,15 @@ def pi():
         d += 2
     return total
 
-"""Returns an approximation of pi to a certain decimal point recursively, but only works up to a precusion of 2 due to stack overflow"""
-def pi_recursive(total = 4.0, d = 3.0, toAdd = False):
-    if 4/d < pow(10, -6):
-       return total 
+def pi_recursive(total = 4.0, d = 3.0, toAdd = False):                    
+    """
+    Returns an approximation of pi recursively
+    Only works up to a precusion of 2 due to RecursionError
+    >>> pi_recursive()
+     3.136592684838816
+    """ 
+    if 4/d < pow(10, -2):
+        return total 
     else:
         if(toAdd):
             return pi_recursive(total + 4/d, d+2, not toAdd)
