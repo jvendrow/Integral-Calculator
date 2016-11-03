@@ -105,6 +105,7 @@ def ln(x):
     >>> ln(e(3))
     3.00002314
     """
+    assert x > 0, "Cannot take natural log of a negative number or 0"
     return integrate(lambda n: 1/n, 1, x)
 
 def sin(x):
